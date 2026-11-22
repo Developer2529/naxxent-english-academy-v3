@@ -93,4 +93,29 @@ export interface Unit {
   reading: ReadingPassage
   quiz: QuizQuestion[]
   listening: ListeningPractice[]
+  videos?: UnitVideo[];
+}
+
+export type VideoCategory = 'grammar' | 'vocabulary' | 'phrases';
+
+export interface UnitVideo {
+  id: string;
+  title: string;
+  description?: string;
+  category: VideoCategory;
+  youtubeId: string; // Solo el código después de "v=" en la URL de YouTube
+  duration?: string;
+}
+
+export interface ConversationLine {
+  speaker: string;
+  textEn: string;
+  textEs: string;
+}
+
+export interface ConversationPractice {
+  id: string;
+  title: string;
+  context: string;
+  lines: ConversationLine[];
 }

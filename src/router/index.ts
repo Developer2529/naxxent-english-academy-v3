@@ -49,6 +49,11 @@ const router = createRouter({
           name: 'book-units',
           component: () => import('@/views/BookUnitsView.vue'),
         },
+        {
+          path: 'unidades/:unitId/videos',
+          name: 'unit-videos',
+          component: () => import('@/views/UnitVideosView.vue'),
+        },
       ],
     },
     {

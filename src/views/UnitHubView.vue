@@ -9,6 +9,7 @@ import {
     FileText,
     HelpCircle,
     Play,
+    AudioLines
 } from 'lucide-vue-next';
 import { curriculumService } from '@/services/curriculumService';
 import type { Unit } from '@/types/curriculum';
@@ -83,6 +84,24 @@ onMounted(async () => {
                     </button>
                 </div>
 
+                <!-- Video Clases -->
+                <div v-if="unit.videos && unit.videos.length > 0"
+                    class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5">
+                    <div>
+                        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-red-50 text-[#f32c2b]">
+                            <Play class="h-5 w-5" />
+                        </div>
+                        <h2 class="mt-3 font-bold text-slate-900">Video Clases</h2>
+                        <p class="mt-1 text-xs text-slate-500">
+                            {{ unit.videos.length }} video(s) explicando gramática, vocabulario y frases clave.
+                        </p>
+                    </div>
+                    <button type="button" @click="router.push({ name: 'unit-videos', params: { unitId: unit.id } })"
+                        class="mt-4 w-full rounded-xl bg-slate-100 py-2.5 text-sm font-semibold text-slate-800 transition-colors hover:bg-[#2c3495] hover:text-white">
+                        Ver Videos
+                    </button>
+                </div>
+
                 <!-- 2. Gramática -->
                 <div class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5">
                     <div>
@@ -138,7 +157,7 @@ onMounted(async () => {
                 <div class="flex flex-col justify-between rounded-2xl border border-red-100 bg-white p-5">
                     <div>
                         <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-red-50 text-[#f32c2b]">
-                            <HelpCircle class="h-5 w-5" />
+                            <AudioLines class="h-5 w-5" />
                         </div>
                         <h2 class="mt-3 font-bold text-slate-900">Listening</h2>
                         <p class="mt-1 text-xs text-slate-500">
@@ -146,10 +165,12 @@ onMounted(async () => {
                         </p>
                         <button type="button"
                             class="mt-4 w-full rounded-xl bg-slate-100 py-2.5 text-sm font-semibold text-slate-800 transition-colors hover:bg-[#2c3495] hover:text-white">
-                            Leer y Responder
+                            Escuchar y Responder
                         </button>
                     </div>
                 </div>
+
+
             </div>
         </template>
     </section>

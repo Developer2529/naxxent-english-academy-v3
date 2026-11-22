@@ -239,6 +239,27 @@ export const INTERCHANGE_INTRO_U1: Unit = {
           explanation: 'Ella responde: "Hello David, I am Maria."',
         },
       ],
+
+      
     },
+    
   ],
+videos: [
+  {
+    id: 'vid-1',
+    title: 'Explicación: Verbo To Be y Saludos',
+    description: 'Repaso rápido de am, is, are y cómo presentarte en clase.',
+    category: 'grammar',
+    youtubeId: 'EvXD8rIp1DQ',
+    duration: '5:20',
+  },
+  {
+    id: 'vid-2',
+    title: 'Frases clave para el primer día',
+    description: 'Pronunciación natural de las expresiones de la Unidad 1.',
+    category: 'phrases',
+    youtubeId: 'qFXbYKFIoDI',
+    duration: '3:45',
+  },
+],
 }
